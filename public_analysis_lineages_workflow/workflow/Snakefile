@@ -1,0 +1,15 @@
+# basedir = workflow.basedir
+# print("Base dir: {}".format(basedir))
+
+configfile: "/hps/software/users/cochrane/ena/azyoud/lineages/public_analysis_lineages_workflow/workflow/config/config.yaml"
+
+##### load rules #####
+include: "rules/fetch_public_fasta.smk"
+include: "rules/create_multifasta_public.smk"
+include: "rules/run_pangolin.smk"
+include: "rules/concat_csv.smk"
+include: "rules/symlink.smk"
+
+##### target rules ######
+rule all:
+	input: "/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/pango/symlinked.txt"

@@ -1,0 +1,49 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cores: 96
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+
+[Tue Aug  2 01:48:22 2022]
+rule run_pangolin:
+    input: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_multifasta/multifasta_267.fasta
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/pango/pango_lineages.267.csv
+    jobid: 0
+    wildcards: n=267
+    threads: 4
+    resources: mem_mb=2048, disk_mb=1000, tmpdir=/nfs/production/cochrane/ena/users/azyoud
+
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+align_to_reference           1              1              1
+all                          1              1              1
+cache_sequence_assign        1              1              1
+create_seq_hash              1              1              1
+get_constellations           1              1              1
+merged_info                  1              1              1
+scorpio                      1              4              4
+sequence_qc                  1              1              1
+total                        8              1              4
+
+Terminating processes on user request, this might take some time.
+[32m[Tue Aug  2 01:48:38 2022][0m
+[31mError in rule align_to_reference:[0m
+[31m    jobid: 0[0m
+[31m    output: /nfs/production/cochrane/ena/users/azyoud/tmpbhvyaqu4/alignment.fasta[0m
+[31m    log: /nfs/production/cochrane/ena/users/azyoud/tmpbhvyaqu4/logs/minimap2_sam.log (check log file(s) for error message)[0m
+[31m[0m
+[31mRuleException:
+CalledProcessError in line 54 of /nfs/production/cochrane/ena/users/azyoud/miniconda/envs/pangolin/lib/python3.8/site-packages/pangolin/scripts/preprocessing.smk:
+Command 'set -euo pipefail;  cat "/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_multifasta/multifasta_267.fasta" | awk '{ if ($0 !~ /^>/) { gsub("-", "",$0); } print $0; }'   |             awk '{ { gsub(" ", "_",$0); } { gsub(",", "_",$0); } print $0; }'  |             minimap2 -a -x asm20 --sam-hit-only --secondary=no --score-N=0  -t  4 /nfs/production/cochrane/ena/users/azyoud/miniconda/envs/pangolin/lib/python3.8/site-packages/pangolin/data/reference.fasta - -o /nfs/production/cochrane/ena/users/azyoud/tmpbhvyaqu4/mapped.sam &> /nfs/production/cochrane/ena/users/azyoud/tmpbhvyaqu4/logs/minimap2_sam.log 
+            gofasta sam toMultiAlign                 -s /nfs/production/cochrane/ena/users/azyoud/tmpbhvyaqu4/mapped.sam                 -t 4                 --reference /nfs/production/cochrane/ena/users/azyoud/miniconda/envs/pangolin/lib/python3.8/site-packages/pangolin/data/reference.fasta                 --trimstart 265                 --trimend 29674                 --trim                 --pad > '/nfs/production/cochrane/ena/users/azyoud/tmpbhvyaqu4/alignment.fasta'' died with <Signals.SIGINT: 2>.
+  File "/nfs/production/cochrane/ena/users/azyoud/miniconda/envs/pangolin/lib/python3.8/site-packages/pangolin/scripts/preprocessing.smk", line 54, in __rule_align_to_reference
+  File "/nfs/production/cochrane/ena/users/azyoud/miniconda/envs/pangolin/lib/python3.8/concurrent/futures/thread.py", line 57, in run[0m
+[Tue Aug  2 01:48:38 2022]
+Error in rule run_pangolin:
+    jobid: 0
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/pango/pango_lineages.267.csv
+    shell:
+        pangolin --threads 4 --outfile /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/pango/pango_lineages.267.csv /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_multifasta/multifasta_267.fasta
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+

@@ -1,0 +1,47 @@
+1226370
+Found 1226370 fasta files in /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_consensus - writing 2452 sequences to each multifasta file, the rest -if exist- will be merged with the last file **************
+
+
+------------------------------------------------------------
+Sender: LSF System <lsf@hl-codon-24-02>
+Subject: Job 4395225: <create_multifasta.unique> in cluster <codon> Exited
+
+Job <create_multifasta.unique> was submitted from host <hl-codon-52-01> by user <azyoud> in cluster <codon> at Wed Jun  1 22:47:39 2022
+Job was executed on host(s) <hl-codon-24-02>, in queue <standard>, as user <azyoud> in cluster <codon> at Wed Jun  1 22:47:41 2022
+</homes/azyoud> was used as the home directory.
+</hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow> was used as the working directory.
+Started at Wed Jun  1 22:47:41 2022
+Terminated at Thu Jun  2 00:46:42 2022
+Results reported at Thu Jun  2 00:46:42 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow/.snakemake/tmp.djahgkiz/snakejob.create_multifasta.3.sh
+------------------------------------------------------------
+
+TERM_MEMLIMIT: job killed after reaching LSF memory usage limit.
+Exited with exit code 143.
+
+Resource usage summary:
+
+    CPU time :                                   366.00 sec.
+    Max Memory :                                 101 MB
+    Average Memory :                             70.65 MB
+    Total Requested Memory :                     100.00 MB
+    Delta Memory :                               -1.00 MB
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                8
+    Run time :                                   7152 sec.
+    Turnaround time :                            7143 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <logs/cluster/create_multifasta/unique/jobid3_80d3cbd4-cff9-4456-93ad-d1f92abf049b.err> for stderr output of this job.
+

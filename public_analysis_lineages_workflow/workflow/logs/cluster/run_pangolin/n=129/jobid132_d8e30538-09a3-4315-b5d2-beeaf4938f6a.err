@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cores: 96
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+
+[Wed Jun 15 20:35:42 2022]
+rule run_pangolin:
+    input: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_multifasta/multifasta_129.fasta
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/pango/pango_lineages.129.csv
+    jobid: 0
+    wildcards: n=129
+    threads: 4
+    resources: mem_mb=2048, disk_mb=1000, tmpdir=/tmp
+
+Job stats:
+job                     count    min threads    max threads
+--------------------  -------  -------------  -------------
+add_failed_seqs             1              1              1
+align_to_reference          1              1              1
+all                         1              1              1
+generate_report             1              1              1
+get_constellations          1              1              1
+hash_sequence_assign        1              1              1
+pangolearn                  1              1              1
+scorpio                     1              4              4
+total                       8              1              4
+
+[Wed Jun 15 20:38:00 2022]
+Finished job 0.
+1 of 1 steps (100%) done

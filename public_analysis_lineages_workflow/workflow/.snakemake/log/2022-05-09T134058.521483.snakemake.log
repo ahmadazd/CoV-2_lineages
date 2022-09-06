@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 500
+Job stats:
+job                    count    min threads    max threads
+-------------------  -------  -------------  -------------
+all                        1              1              1
+concat_csv                 1              1              1
+create_multifasta          1              1              1
+fetch_private_fasta        1              1              1
+run_pangolin               1              4              4
+total                      5              1              4
+
+Select jobs to execute...
+
+[Mon May  9 13:40:58 2022]
+rule fetch_private_fasta:
+    input: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/run_pangolin.txt
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus/end.txt
+    jobid: 4
+    resources: tmpdir=/tmp
+
+Submitted job 4 with external jobid '9433484 logs/cluster/fetch_private_fasta/unique/jobid4_b6763760-6b59-4be9-b4b3-6cddcfc15b28.out'.
+[Mon May  9 16:37:24 2022]
+Error in rule fetch_private_fasta:
+    jobid: 4
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus/end.txt
+    shell:
+        python3 /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/scripts/private_fasta_fetching.py -o /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 9433484 logs/cluster/fetch_private_fasta/unique/jobid4_b6763760-6b59-4be9-b4b3-6cddcfc15b28.out
+
+Error executing rule fetch_private_fasta on cluster (jobid: 4, external: 9433484 logs/cluster/fetch_private_fasta/unique/jobid4_b6763760-6b59-4be9-b4b3-6cddcfc15b28.out, jobscript: /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/.snakemake/tmp.aszrqtsc/snakejob.fetch_private_fasta.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Complete log: /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/.snakemake/log/2022-05-09T134058.521483.snakemake.log

@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count    min threads    max threads
+-------  -------  -------------  -------------
+symlink        1              1              1
+total          1              1              1
+
+Select jobs to execute...
+
+[Tue Jul 19 15:31:53 2022]
+rule symlink:
+    input: /homes/azyoud/end_of_pangolin_workflow.txt
+    output: /homes/azyoud/symlinked.txt
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Tue Jul 19 15:31:53 2022]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow/rules/.snakemake/log/2022-07-19T153153.384652.snakemake.log

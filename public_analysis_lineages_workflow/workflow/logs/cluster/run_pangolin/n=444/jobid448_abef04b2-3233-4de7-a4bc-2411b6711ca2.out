@@ -1,0 +1,54 @@
+[32m****
+Pangolin running in usher mode.
+****[0m
+[32mMaximum ambiguity allowed is 0.3.
+****[0m
+[32mQuery file:	[0m/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_multifasta/multifasta_444.fasta
+[32m****
+Data files found:[0m
+usher_pb:	/nfs/production/cochrane/ena/users/azyoud/miniconda/envs/pangolin/lib/python3.8/site-packages/pangolin_data/data/lineageTree.pb
+[32m****[0m
+
+------------------------------------------------------------
+Sender: LSF System <lsf@hl-codon-44-03>
+Subject: Job 4799947: <run_pangolin.n=444> in cluster <codon> Exited
+
+Job <run_pangolin.n=444> was submitted from host <hl-codon-28-03> by user <azyoud> in cluster <codon> at Tue Aug  2 01:20:08 2022
+Job was executed on host(s) <4*hl-codon-44-03>, in queue <standard>, as user <azyoud> in cluster <codon> at Tue Aug  2 01:20:09 2022
+</homes/azyoud> was used as the home directory.
+</hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow> was used as the working directory.
+Started at Tue Aug  2 01:20:09 2022
+Terminated at Tue Aug  2 01:20:28 2022
+Results reported at Tue Aug  2 01:20:28 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow/.snakemake/tmp.wcma87gc/snakejob.run_pangolin.448.sh
+------------------------------------------------------------
+
+TERM_MEMLIMIT: job killed after reaching LSF memory usage limit.
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   58.61 sec.
+    Max Memory :                                 2167 MB
+    Average Memory :                             1625.25 MB
+    Total Requested Memory :                     2048.00 MB
+    Delta Memory :                               -119.00 MB
+    Max Swap :                                   -
+    Max Processes :                              9
+    Max Threads :                                18
+    Run time :                                   18 sec.
+    Turnaround time :                            20 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <logs/cluster/run_pangolin/n=444/jobid448_abef04b2-3233-4de7-a4bc-2411b6711ca2.err> for stderr output of this job.
+

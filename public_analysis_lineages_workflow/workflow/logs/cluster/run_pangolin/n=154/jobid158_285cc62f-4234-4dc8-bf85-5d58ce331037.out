@@ -1,0 +1,63 @@
+[32m****
+Query sequences collapsed from [0m3282[32m to [0m3280[32m unique sequences.[0m
+[32m****
+Running sequence QC[0m
+[32mTotal passing QC: [0m3280
+[32m****
+[0m18[32m sequences assigned via designations.[0m
+Using UShER as inference engine.
+[32m****
+Pangolin running in usher mode.
+****[0m
+[32mMaximum ambiguity allowed is 0.3.
+****[0m
+[32mQuery file:	[0m/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_multifasta/multifasta_154.fasta
+[32m****
+Data files found:[0m
+usher_pb:	/nfs/production/cochrane/ena/users/azyoud/miniconda/envs/pangolin/lib/python3.8/site-packages/pangolin_data/data/lineageTree.pb
+[32m****[0m
+[32m****
+Output file written to: [0m/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/pango/pango_lineages.154.csv
+
+------------------------------------------------------------
+Sender: LSF System <lsf@hl-codon-14-03>
+Subject: Job 4789335: <run_pangolin.n=154> in cluster <codon> Done
+
+Job <run_pangolin.n=154> was submitted from host <hl-codon-28-03> by user <azyoud> in cluster <codon> at Tue Aug  2 01:06:22 2022
+Job was executed on host(s) <4*hl-codon-14-03>, in queue <standard>, as user <azyoud> in cluster <codon> at Tue Aug  2 01:06:23 2022
+</homes/azyoud> was used as the home directory.
+</hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow> was used as the working directory.
+Started at Tue Aug  2 01:06:23 2022
+Terminated at Tue Aug  2 02:06:01 2022
+Results reported at Tue Aug  2 02:06:01 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow/.snakemake/tmp.wcma87gc/snakejob.run_pangolin.158.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   13665.57 sec.
+    Max Memory :                                 619 MB
+    Average Memory :                             599.09 MB
+    Total Requested Memory :                     2048.00 MB
+    Delta Memory :                               1429.00 MB
+    Max Swap :                                   -
+    Max Processes :                              9
+    Max Threads :                                33
+    Run time :                                   3577 sec.
+    Turnaround time :                            3579 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <logs/cluster/run_pangolin/n=154/jobid158_285cc62f-4234-4dc8-bf85-5d58ce331037.err> for stderr output of this job.
+

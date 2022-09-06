@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count    min threads    max threads
+-----------------  -------  -------------  -------------
+all                      1              1              1
+concat_csv               1              1              1
+create_multifasta        1              1              1
+run_pangolin             1              4              4
+total                    4              1              4
+
+Select jobs to execute...
+
+[Tue Apr 19 17:16:13 2022]
+rule create_multifasta:
+    input: /hps/software/users/cochrane/ena/azyoud/lineages/private_consensus
+    output: /hps/software/users/cochrane/ena/azyoud/lineages/private_multifasta
+    jobid: 3
+    resources: tmpdir=/tmp
+
+ImproperOutputException in line 1 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/rules/create_multifasta.smk:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule create_multifasta:
+/hps/software/users/cochrane/ena/azyoud/lineages/private_multifasta
+Removing output files of failed job create_multifasta since they might be corrupted:
+/hps/software/users/cochrane/ena/azyoud/lineages/private_multifasta
+Skipped removing non-empty directory /hps/software/users/cochrane/ena/azyoud/lineages/private_multifasta
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/.snakemake/log/2022-04-19T171612.802614.snakemake.log

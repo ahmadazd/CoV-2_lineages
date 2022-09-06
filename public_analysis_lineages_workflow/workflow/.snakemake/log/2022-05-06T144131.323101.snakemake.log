@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count    min threads    max threads
+-------------------  -------  -------------  -------------
+all                        1              1              1
+concat_csv                 1              1              1
+create_multifasta          1              1              1
+fetch_private_fasta        1              1              1
+run_pangolin               1              1              1
+total                      5              1              1
+
+Select jobs to execute...
+
+[Fri May  6 14:41:31 2022]
+rule fetch_private_fasta:
+    input: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/run_pangolin.txt
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus
+    jobid: 4
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.
+[Fri May  6 14:56:12 2022]
+Error in rule fetch_private_fasta:
+    jobid: 4
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus
+    shell:
+        python3 /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/scripts/private_fasta_fetching.py -o /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job fetch_private_fasta since they might be corrupted:
+/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus
+Complete log: /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/.snakemake/log/2022-05-06T144131.323101.snakemake.log

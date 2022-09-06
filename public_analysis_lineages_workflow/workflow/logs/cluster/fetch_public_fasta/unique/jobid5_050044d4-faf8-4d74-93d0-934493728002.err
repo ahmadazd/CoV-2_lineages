@@ -1,0 +1,16 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cores: 96
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+
+[Mon Aug  1 12:14:37 2022]
+rule fetch_public_fasta:
+    input: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/run_public_pangolin.txt
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_consensus/end.txt
+    jobid: 0
+    resources: mem_mb=2048, disk_mb=1000, tmpdir=/tmp
+
+[Mon Aug  1 13:00:22 2022]
+Finished job 0.
+1 of 1 steps (100%) done

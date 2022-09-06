@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 1 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/rules/run_pangolin.smk:
+Missing input files for rule run_pangolin:
+/hps/software/users/cochrane/ena/azyoud/lineages/private_consensus/private_multifasta/multifasta_{n}.fasta

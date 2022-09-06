@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 15 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/Snakefile:
+Missing input files for rule all:
+/hps/software/users/cochrane/ena/azyoud/lineages/private_consensus/private_multifasta/pango/concat_pangolin.csv

@@ -1,0 +1,59 @@
+loading model 06/15/2022, 20:39:10
+processing block of 1000 sequences 06/15/2022, 20:39:14
+processing block of 1000 sequences 06/15/2022, 20:39:19
+processing block of 348 sequences 06/15/2022, 20:39:23
+complete 06/15/2022, 20:39:24
+[32mOutput file written to: [0m/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/pango/pango_lineages.224.csv
+[32mAll dependencies satisfied.[0m
+[32mThe query file is:[0m/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_multifasta/multifasta_224.fasta
+[32m** Running sequence QC **[0m
+[32mNumber of sequences detected: [0m2518
+[32mTotal passing QC: [0m2374
+[32m
+Data files found:[0m
+Trained model:	/homes/azyoud/miniconda3/envs/pangolin/lib/python3.8/site-packages/pangoLEARN/data/decisionTree_v1.joblib
+Header file:	/homes/azyoud/miniconda3/envs/pangolin/lib/python3.8/site-packages/pangoLEARN/data/decisionTreeHeaders_v1.joblib
+Designated hash:	/homes/azyoud/miniconda3/envs/pangolin/lib/python3.8/site-packages/pangoLEARN/data/lineages.hash.csv
+
+------------------------------------------------------------
+Sender: LSF System <lsf@hl-codon-16-02>
+Subject: Job 8177100: <run_pangolin.n=224> in cluster <codon> Done
+
+Job <run_pangolin.n=224> was submitted from host <hl-codon-09-02> by user <azyoud> in cluster <codon> at Wed Jun 15 20:37:55 2022
+Job was executed on host(s) <4*hl-codon-16-02>, in queue <standard>, as user <azyoud> in cluster <codon> at Wed Jun 15 20:37:56 2022
+</homes/azyoud> was used as the home directory.
+</hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow> was used as the working directory.
+Started at Wed Jun 15 20:37:56 2022
+Terminated at Wed Jun 15 20:39:30 2022
+Results reported at Wed Jun 15 20:39:30 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow/.snakemake/tmp.i5mlcqut/snakejob.run_pangolin.227.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   114.40 sec.
+    Max Memory :                                 1008 MB
+    Average Memory :                             241.88 MB
+    Total Requested Memory :                     2048.00 MB
+    Delta Memory :                               1040.00 MB
+    Max Swap :                                   -
+    Max Processes :                              8
+    Max Threads :                                17
+    Run time :                                   93 sec.
+    Turnaround time :                            95 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <logs/cluster/run_pangolin/n=224/jobid227_be7b49f5-97e1-4440-a8b3-aef742d8e9ba.err> for stderr output of this job.
+

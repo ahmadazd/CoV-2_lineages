@@ -1,0 +1,65 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 500
+Job stats:
+job                    count    min threads    max threads
+-------------------  -------  -------------  -------------
+all                        1              1              1
+concat_csv                 1              1              1
+create_multifasta          1              1              1
+fetch_private_fasta        1              1              1
+run_pangolin               1              4              4
+total                      5              1              4
+
+Select jobs to execute...
+
+[Sun May 15 16:13:05 2022]
+rule fetch_private_fasta:
+    input: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/run_pangolin.txt
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus/end.txt
+    jobid: 4
+    resources: tmpdir=/tmp
+
+Submitted job 4 with external jobid '837455 logs/cluster/fetch_private_fasta/unique/jobid4_e7e857f5-ff18-4f89-bf89-2451369d3b33.out'.
+Waiting at most 60 seconds for missing files.
+[Sun May 15 16:14:06 2022]
+Finished job 4.
+1 of 5 steps (20%) done
+Select jobs to execute...
+
+[Sun May 15 16:14:06 2022]
+rule create_multifasta:
+    input: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus/end.txt
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_multifasta/end.txt
+    jobid: 3
+    resources: tmpdir=/tmp
+
+Submitted job 3 with external jobid '837497 logs/cluster/create_multifasta/unique/jobid3_d9a9efff-825b-4a83-8753-3f44d2956ffb.out'.
+Waiting at most 60 seconds for missing files.
+[Sun May 15 16:15:06 2022]
+Finished job 3.
+2 of 5 steps (40%) done
+Select jobs to execute...
+
+[Sun May 15 16:15:06 2022]
+rule run_pangolin:
+    input: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_multifasta/end.txt
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/pango
+    jobid: 2
+    threads: 4
+    resources: tmpdir=/tmp, mem_mb=2048
+
+Submitted job 2 with external jobid '837534 logs/cluster/run_pangolin/unique/jobid2_92e97cd5-26bf-4357-8497-44f23fd3e950.out'.
+[Sun May 15 16:15:18 2022]
+Error in rule run_pangolin:
+    jobid: 2
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/pango
+    shell:
+        python3 /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/scripts/pangolin.py -f /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_multifasta/end.txt -o /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/pango
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 837534 logs/cluster/run_pangolin/unique/jobid2_92e97cd5-26bf-4357-8497-44f23fd3e950.out
+
+Error executing rule run_pangolin on cluster (jobid: 2, external: 837534 logs/cluster/run_pangolin/unique/jobid2_92e97cd5-26bf-4357-8497-44f23fd3e950.out, jobscript: /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/.snakemake/tmp.dgf4rpk_/snakejob.run_pangolin.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/.snakemake/log/2022-05-15T161305.777976.snakemake.log

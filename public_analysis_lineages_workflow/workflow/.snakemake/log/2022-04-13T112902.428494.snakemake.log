@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count    min threads    max threads
+-------------------  -------  -------------  -------------
+fetch_private_fasta        1              1              1
+total                      1              1              1
+
+Select jobs to execute...
+
+[Wed Apr 13 11:29:02 2022]
+rule fetch_private_fasta:
+    output: /hps/software/users/cochrane/ena/azyoud/lineages/private_consensus_2
+    jobid: 0
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.
+[Wed Apr 13 11:40:55 2022]
+Error in rule fetch_private_fasta:
+    jobid: 0
+    output: /hps/software/users/cochrane/ena/azyoud/lineages/private_consensus_2
+    shell:
+        python3 /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/scripts/private_fasta_fetching.py
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/.snakemake/log/2022-04-13T112902.428494.snakemake.log

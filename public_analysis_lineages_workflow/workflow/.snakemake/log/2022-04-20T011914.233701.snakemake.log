@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count    min threads    max threads
+----------  -------  -------------  -------------
+all               1              1              1
+concat_csv        1              1              1
+total             2              1              1
+
+Select jobs to execute...
+
+[Wed Apr 20 01:19:14 2022]
+rule concat_csv:
+    input: /hps/software/users/cochrane/ena/azyoud/lineages/pango
+    output: /hps/software/users/cochrane/ena/azyoud/lineages/concat_pangolin.csv
+    jobid: 1
+    resources: tmpdir=/tmp
+
+[Wed Apr 20 01:19:14 2022]
+Error in rule concat_csv:
+    jobid: 1
+    output: /hps/software/users/cochrane/ena/azyoud/lineages/concat_pangolin.csv
+    shell:
+        python /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/scripts/concatenate_pangolin.py -f /hps/software/users/cochrane/ena/azyoud/lineages/pango
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/.snakemake/log/2022-04-20T011914.233701.snakemake.log

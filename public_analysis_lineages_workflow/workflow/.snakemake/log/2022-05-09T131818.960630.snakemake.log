@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 500
+Job stats:
+job                    count    min threads    max threads
+-------------------  -------  -------------  -------------
+all                        1              1              1
+concat_csv                 1              1              1
+create_multifasta          1              1              1
+fetch_private_fasta        1              1              1
+run_pangolin               1              4              4
+total                      5              1              4
+
+Select jobs to execute...
+
+[Mon May  9 13:18:19 2022]
+rule fetch_private_fasta:
+    input: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/run_pangolin.txt
+    output: /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus/end.txt
+    jobid: 4
+    resources: tmpdir=/tmp
+
+Submitted job 4 with external jobid '9423715 logs/cluster/fetch_private_fasta/unique/jobid4_10b6cc68-a814-4df6-b6cc-c9a99b4616f3.out'.
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.

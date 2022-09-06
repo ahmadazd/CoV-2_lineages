@@ -1,0 +1,59 @@
+Fetching  Metadata From Advanced Search...................................................................
+        analysis_accession                                      submitted_ftp
+0              ERZ10000000  ftp.sra.ebi.ac.uk/vol1/ERZ100/ERZ10000000/SRR1...
+1              ERZ10000002  ftp.sra.ebi.ac.uk/vol1/ERZ100/ERZ10000002/SRR1...
+2              ERZ10000007  ftp.sra.ebi.ac.uk/vol1/ERZ100/ERZ10000007/SRR1...
+3              ERZ10000011  ftp.sra.ebi.ac.uk/vol1/ERZ100/ERZ10000011/SRR1...
+4              ERZ10000022  ftp.sra.ebi.ac.uk/vol1/ERZ100/ERZ10000022/SRR1...
+...                    ...                                                ...
+1461292         ERZ9999985  ftp.sra.ebi.ac.uk/vol1/ERZ999/ERZ9999985/SRR16...
+1461293         ERZ9999992  ftp.sra.ebi.ac.uk/vol1/ERZ999/ERZ9999992/SRR15...
+1461294         ERZ9999995  ftp.sra.ebi.ac.uk/vol1/ERZ999/ERZ9999995/SRR16...
+1461295         ERZ9999996  ftp.sra.ebi.ac.uk/vol1/ERZ999/ERZ9999996/SRR16...
+1461296         ERZ9999999  ftp.sra.ebi.ac.uk/vol1/ERZ999/ERZ9999999/SRR15...
+
+[1461297 rows x 2 columns]
+Pulling public fasta...................................................................
+
+------------------------------------------------------------
+Sender: LSF System <lsf@hl-codon-02-04>
+Subject: Job 7703125: <fetch_public_fasta.unique> in cluster <codon> Done
+
+Job <fetch_public_fasta.unique> was submitted from host <hl-codon-06-02> by user <azyoud> in cluster <codon> at Mon Jun 13 13:29:59 2022
+Job was executed on host(s) <hl-codon-02-04>, in queue <standard>, as user <azyoud> in cluster <codon> at Mon Jun 13 13:30:17 2022
+</homes/azyoud> was used as the home directory.
+</hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow> was used as the working directory.
+Started at Mon Jun 13 13:30:17 2022
+Terminated at Tue Jun 14 00:05:36 2022
+Results reported at Tue Jun 14 00:05:36 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow/.snakemake/tmp.ol7l61w2/snakejob.fetch_public_fasta.4.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   8895.36 sec.
+    Max Memory :                                 722 MB
+    Average Memory :                             718.19 MB
+    Total Requested Memory :                     2048.00 MB
+    Delta Memory :                               1326.00 MB
+    Max Swap :                                   -
+    Max Processes :                              8
+    Max Threads :                                10
+    Run time :                                   38138 sec.
+    Turnaround time :                            38137 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <logs/cluster/fetch_public_fasta/unique/jobid4_a9d77d30-f1f5-4021-b7ab-9c22604ad60e.err> for stderr output of this job.
+

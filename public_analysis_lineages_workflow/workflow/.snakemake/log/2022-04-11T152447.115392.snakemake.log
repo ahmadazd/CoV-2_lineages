@@ -1,0 +1,4 @@
+KeyError in line 5 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/rules/create_multifasta.smk:
+'chunks'
+  File "/hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/Snakefile", line 9, in <module>
+  File "/hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/rules/create_multifasta.smk", line 5, in <module>
