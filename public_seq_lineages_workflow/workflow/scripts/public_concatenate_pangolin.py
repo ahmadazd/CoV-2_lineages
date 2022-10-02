@@ -30,9 +30,9 @@ parser = argparse.ArgumentParser(prog='public_concatenate_pangolin.py', formatte
                                      epilog="""
         + ============================================================ +
         |               European Nucleotide Archive (ENA)
-	           part of Public analysis pangolin lineages Tool      |
+                   part of Public sequence pangolin lineages Tool      |
         |                                                              |
-        |             Tool to concate pangolin csv output              |
+        |             Tool to concate the csv output of pangolin       |
         + =========================================================== +  """)
 
 parser.add_argument('-f', '--file', help='csv files input directory', type=str, required=True)
@@ -46,19 +46,17 @@ def concat_csv():
     df_final = formatting_dataframe(df)
     now = datetime.datetime.now()
     now_str = now.strftime("%d%m%y")
-    df_final.to_csv(f'{args.output}/public_consensus_pango_lineages_{now_str}.csv', index=False)
-    print(f'Concatenate all csv files in {args.file} into {args.output}/public_consensus_pango_lineages_{now_str}.csv')
+    df_final.to_csv(f'{args.output}/public_seq_pango_lineages_updated_{now_str}.csv', index=False)
+    print(f'Concatenate all csv files in {args.file} into {args.output}/public_seq_pango_lineages_updated_{now_str}.csv')
 
 def formatting_dataframe(df):
     run_acc_list =[]
     for row in df['taxon']:
-        parsed_row = row.split('_')
-        parsed_row = parsed_row[0].split(' ')
-        run_acc = re.sub(r'^.*?:','', parsed_row[0])
-        run_acc_list.append(run_acc)
-    run_df = pd.DataFrame({'run_accession':run_acc_list})
+        parsed_row = row.split('|')
+        run_acc_list.append(parsed_row[1])
+    run_df = pd.DataFrame({'accession':run_acc_list})
     df = pd.concat([df, run_df], ignore_index=False, axis=1)
-    who_list = []
+    who_list =[]
     for row in df['scorpio_call']:
         who_parsed = str(row).split('(')
         who_list.append(who_parsed[0])

@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 19 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/Snakefile:
-Missing input files for rule all:
-covid19-lineages.json

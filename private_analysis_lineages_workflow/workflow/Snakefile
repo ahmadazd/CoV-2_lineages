@@ -1,0 +1,15 @@
+# basedir = workflow.basedir
+# print("Base dir: {}".format(basedir))
+
+configfile: "/hps/software/users/cochrane/ena/azyoud/lineages/private_analysis_lineages_workflow/workflow/config/config.yaml"
+
+##### load rules #####
+include: "rules/fetch_private_fasta.smk"
+include: "rules/create_multifasta.smk"
+include: "rules/run_pangolin.smk"
+include: "rules/concat_csv.smk"
+include:"rules/transfer.smk"
+
+##### target rules ######
+rule all:
+	input: "/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/end.txt"

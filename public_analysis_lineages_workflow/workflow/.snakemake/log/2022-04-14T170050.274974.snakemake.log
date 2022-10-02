@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardError in line 1 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/rules/concat_csv.smk:
-Wildcards in input files cannot be determined from output files:
-'n'

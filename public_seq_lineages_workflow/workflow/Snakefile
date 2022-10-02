@@ -1,0 +1,14 @@
+# basedir = workflow.basedir
+# print("Base dir: {}".format(basedir))
+
+configfile: "/hps/software/users/cochrane/ena/azyoud/lineages/public_seq_lineages_workflow/workflow/config/config.yaml"
+
+##### load rules ######
+include: "rules/transfer.smk"
+include: "rules/create_update_list.smk"
+include: "rules/fetch_public_seq_multifasta.smk"
+include: "rules/run_pangolin.smk"
+include: "rules/concat_csv.smk"
+##### target rules ######
+rule all:
+	input: "/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_seq_workflow_output/pango_seq/end_of_pangolin_workflow.txt"

@@ -1,4 +1,0 @@
-WorkflowError in line 14 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/Snakefile:
-Failed to open source file /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/rules/concat_sv.smk
-FileNotFoundError: [Errno 2] No such file or directory: '/hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/rules/concat_sv.smk'
-  File "/hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/Snakefile", line 14, in <module>

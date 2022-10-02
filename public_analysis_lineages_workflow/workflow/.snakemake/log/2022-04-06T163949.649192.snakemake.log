@@ -1,3 +1,0 @@
-FileNotFoundError in line 4 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/Snakefile:
-[Errno 2] No such file or directory: 'config/config.yaml'
-  File "/hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/Snakefile", line 4, in <module>

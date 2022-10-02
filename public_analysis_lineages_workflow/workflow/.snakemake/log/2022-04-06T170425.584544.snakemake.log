@@ -1,3 +1,0 @@
-Building DAG of jobs...
-MissingRuleException:
-No rule to produce /hps/software/users/cochrane/ena/azyoud/lineages/private_consensus/private_multifasta/multifasta_{n}.fasta (if you use input functions make sure that they don't raise unexpected exceptions).
