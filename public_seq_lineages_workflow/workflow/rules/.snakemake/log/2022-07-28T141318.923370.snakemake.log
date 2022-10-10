@@ -1,3 +1,0 @@
-KeyError in line 5 of /hps/software/users/cochrane/ena/azyoud/lineages/public_seq_lineages_workflow/workflow/rules/split_subfiles.smk:
-'chunks'
-  File "/hps/software/users/cochrane/ena/azyoud/lineages/public_seq_lineages_workflow/workflow/rules/split_subfiles.smk", line 5, in <module>
