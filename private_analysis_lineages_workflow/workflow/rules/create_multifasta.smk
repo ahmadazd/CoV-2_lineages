@@ -1,9 +1,11 @@
 rule create_multifasta:
 	input:
-		"/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus/end.txt"
+		expand("{output_dir}/private_consensus/end.txt", output_dir=config["output_dir"])
 	output:
-		expand("/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_multifasta/multifasta_{n}.fasta", n=range(1,config["chunks"]+1))
+		expand("{output_dir}/private_multifasta/multifasta_{n}.fasta", n=range(1,config["chunks"]+1), output_dir=config["output_dir"])
+	resources:
+                tmpdir=config["temp_dir"]
 	params:
 		num = str(config["chunks"])
 	shell:
-		"python /hps/software/users/cochrane/ena/azyoud/lineages/private_analysis_lineages_workflow/workflow/scripts/create_multifasta.py -f /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus -num {params.num} -o /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_multifasta"
+		"python {config[script_dir]}/scripts/create_multifasta.py -f {config[output_dir]}/private_consensus -num {params.num} -o {config[output_dir]}/private_multifasta"

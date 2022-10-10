@@ -1,12 +1,15 @@
 rule concat_csv:
 	input:
-		expand("/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/pango/pango_lineages.{n}.csv", n=range(1,config["chunks"]+1))
+		expand("{output_dir}/pango/pango_lineages.{n}.csv", n=range(1,config["chunks"]+1), output_dir=config["output_dir"])
 	output:
-		"/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/pango_lineages.csv"
+		"{output_dir}/pango_lineages.csv"
+	resources:
+                mem_mb = 3048,
+                tmpdir=config["temp_dir"]
 	params:
                 host=''
-		portal=
-		serviceName=''
+                portal=
+                serviceName=''
 
 	shell:
-		"python /hps/software/users/cochrane/ena/azyoud/lineages/private_analysis_lineages_workflow/workflow/scripts/concatenate_pangolin.py -h {params.host} -p {params.portal} -s {params.serviceName} -f /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/pango -o {output}"
+		"python {config[script_dir]}/scripts/concatenate_pangolin.py -h {params.host} -p {params.portal} -s {params.serviceName} -f {config[output_dir]}/pango -o {output}"

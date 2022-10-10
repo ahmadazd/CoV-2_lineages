@@ -1,11 +1,12 @@
 rule fetch_public_fasta:
 	input:
-		"/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/run_public_pangolin.txt"
+		expand("{output_dir}/run_public_pangolin.txt", output_dir=config["output_dir"])
 	output:
-		"/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_consensus/end.txt"
+		"{output_dir}/public_consensus/end.txt"
 
 	resources:
-                mem_mb = 2048
+                mem_mb = 2048,
+                tmpdir=config["temp_dir"]
 
 	shell:
-		 "python3 /hps/software/users/cochrane/ena/azyoud/lineages/public_analysis_lineages_workflow/workflow/scripts/public_consensus_fetch.py -o /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_consensus"
+		 "python3 {config[workflow_dir]}/scripts/public_consensus_fetch.py -o {config[output_dir]}/public_consensus"

@@ -1,11 +1,12 @@
 rule fetch_private_fasta:
 	input:
-		"/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/run_pangolin.txt"
+		expand("{output_dir}/run_pangolin.txt", output_dir=config["output_dir"])
 	output:
-		"/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus/end.txt"
+		"{output_dir}/private_consensus/end.txt"
 
 	resources:
-                mem_mb = 2048
+                mem_mb = 2048,
+                tmpdir=config["temp_dir"]
 
 	shell:
-		 "python3 /hps/software/users/cochrane/ena/azyoud/lineages/private_analysis_lineages_workflow/workflow/scripts/private_fasta_fetching.py -o /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/private_consensus"
+		 "python3 {config[script_dir]}/scripts/private_fasta_fetching.py -o {config[output_dir]}/private_consensus"

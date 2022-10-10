@@ -1,8 +1,10 @@
 rule transfer:
         input:
-                "/nfs/production/cochrane/ena/index/ena-dcap-ebisearch/output/covid19/embl-covid19.accs.txt"
+                expand("{transfer_input}", transfer_input=config["transfer_input"])
         output:
-                "/hps/software/users/cochrane/ena/azyoud/lineages/public_seq_lineages_workflow/workflow/rules/embl-covid19.accs.txt"
+                expand("{workflow_dir}/workflow/rules/embl-covid19.accs.txt", workflow_dir=config["workflow_dir"])
+	resources:
+                tmpdir=config["temp_dir"]
 
         shell:
-                 "cp /nfs/production/cochrane/ena/index/ena-dcap-ebisearch/output/covid19/embl-covid19.accs.txt /hps/software/users/cochrane/ena/azyoud/lineages/public_seq_lineages_workflow/workflow/rules/embl-covid19.accs.txt"
+                 "cp {input} {output}"

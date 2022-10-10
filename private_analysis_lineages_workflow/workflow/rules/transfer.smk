@@ -1,7 +1,9 @@
 rule transfer:
     input:
-         "/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/pango_lineages.csv"
+         expand("{output_dir}/pango_lineages.csv", output_dir=config["output_dir"])
     output:
-          "/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/end.txt"
+          expand("{output_dir_trans}/end.txt", output_dir_trans=config["output_dir"])
+    resources:
+          tmpdir=config["temp_dir"]
     shell:
-         "sh /hps/software/users/cochrane/ena/azyoud/lineages/private_analysis_lineages_workflow/workflow/rules/transfer_command.sh"
+         "aws --endpoint-url https://uk1s3.embassy.ebi.ac.uk s3 cp {input} s3://dcc_walton/dcc_walton_phylogeny/pango_lineages.csv&&touch {output}"

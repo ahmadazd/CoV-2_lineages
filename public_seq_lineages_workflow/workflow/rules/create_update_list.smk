@@ -1,12 +1,12 @@
 rule create_update_list:
         input:
-                "/hps/software/users/cochrane/ena/azyoud/lineages/public_seq_lineages_workflow/workflow/rules/embl-covid19.accs.txt"
+                expand("{workflow_dir}/workflow/rules/embl-covid19.accs.txt", workflow_dir=config["workflow_dir"])
         output:
-                "/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_seq_workflow_output/embl-covid19.accs_updated.txt"
+                expand("{output_dir}/embl-covid19.accs_updated.txt", output_dir=config["output_dir"])
         params:
                 days = 90
         resources:
                 mem_mb = 3048,
-		tmpdir="/nfs/production/cochrane/ena/users/azyoud"
+		tmpdir=config["temp_dir"]
         shell:
-                "python3 /hps/software/users/cochrane/ena/azyoud/lineages/public_seq_lineages_workflow/workflow/scripts/list_updated.py -o /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_seq_workflow_output -f {input} -d {params.days}"
+                "python3 {config[workflow_dir]}/workflow/scripts/list_updated.py -o {config[output_dir]} -f {input} -d {params.days}"
