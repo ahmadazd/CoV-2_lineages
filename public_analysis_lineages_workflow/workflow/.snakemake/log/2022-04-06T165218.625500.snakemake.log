@@ -1,6 +1,0 @@
-localrules directive specifies rules that are not present in the Snakefile:
-	all
-
-Building DAG of jobs...
-Nothing to be done.
-Complete log: /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/.snakemake/log/2022-04-06T165218.625500.snakemake.log

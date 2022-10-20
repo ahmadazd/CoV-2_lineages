@@ -1,3 +1,0 @@
-SyntaxError in line 9 of /hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow/rules/run_pangolin.smk:
-invalid syntax
-  File "/hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow/Snakefile", line 9, in <module>

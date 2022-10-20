@@ -1,11 +1,12 @@
 rule create_multifasta_public:
 	input:
-		"/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_consensus/end.txt"
+		expand("{output_dir}/public_consensus/end.txt", output_dir=config["output_dir"])
 	output:
-		expand("/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_multifasta/multifasta_{n}.fasta", n=range(1,config["chunks"]+1))
+		expand("output_dir/public_multifasta/multifasta_{n}.fasta", n=range(1,config["chunks"]+1), output_dir=config["output_dir"])
 	params:
 		num = str(config["chunks"])
 	resources:
-                mem_mb = 2048
+                mem_mb = 2048,
+                tmpdir=config["temp_dir"]
 	shell:
-		"python /hps/software/users/cochrane/ena/azyoud/lineages/public_analysis_lineages_workflow/workflow/scripts/create_multifasta_public.py -f /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_consensus -num {params.num} -o /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/public_multifasta"
+		"python {config[workflow_dir]}/workflow/scripts/create_multifasta_public.py -f {config[output_dir]}/public_consensus -num {params.num} -o {config[output_dir]}/public_multifasta"

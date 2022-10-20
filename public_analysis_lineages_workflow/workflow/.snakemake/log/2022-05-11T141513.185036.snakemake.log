@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 15 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/Snakefile:
-Missing input files for rule all:
-/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/run_pangolin.txt

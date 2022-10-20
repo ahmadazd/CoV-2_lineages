@@ -1,2 +1,0 @@
-SyntaxError in line 11 of /hps/software/users/cochrane/ena/azyoud/lineages/public_lineages_workflow/workflow/rules/symlink_test.smk:
-Command must be given as string after the shell keyword. (symlink_test.smk, line 11)

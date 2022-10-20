@@ -1,11 +1,12 @@
 rule concat_csv:
 	input:
-		expand("/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/pango/pango_lineages.{n}.csv", n=range(1,config["chunks"]+1))
+		expand("{output_dir}/pango/pango_lineages.{n}.csv", n=range(1,config["chunks"]+1), output_dir=config["output_dir"])
 	output:
-		"/hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/pango/end_of_pangolin_workflow.txt"
+		expand("{output_dir}/pango/end_of_pangolin_workflow.txt", output_dir=config["output_dir"])
 	
 	resources:
-                mem_mb = 2048
+                mem_mb = 2048,
+                tmpdir=config["temp_dir"]
 
 	shell:
-		"python /hps/software/users/cochrane/ena/azyoud/lineages/public_analysis_lineages_workflow/workflow/scripts/public_concatenate_pangolin.py -f /hps/nobackup/cochrane/ena/users/azyoud/lineages_workflow_output/public_consensus_workflow_output/pango -o /nfs/production/cochrane/ena/data/covid19"
+		"python {config[workflow_dir]}/workflow/scripts/public_concatenate_pangolin.py -f {config[output_dir]}/pango -o {config[final_output_dir]}"

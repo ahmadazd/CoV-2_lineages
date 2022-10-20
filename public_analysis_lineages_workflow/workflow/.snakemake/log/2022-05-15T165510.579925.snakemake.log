@@ -1,3 +1,0 @@
-SyntaxError in line 5 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/rules/create_multifasta.smk:
-invalid syntax
-  File "/hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/Snakefile", line 8, in <module>

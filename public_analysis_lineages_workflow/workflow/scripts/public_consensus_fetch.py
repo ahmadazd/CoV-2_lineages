@@ -22,9 +22,10 @@ from dateutil.relativedelta import relativedelta, MO
 parser = argparse.ArgumentParser(prog='pulling_fasta.py', formatter_class=argparse.RawDescriptionHelpFormatter,
                                      epilog="""
         + ============================================================ +
-        |  European Nucleotide Archive (ENA) data flow monitoring Tool  |
+        |            European Nucleotide Archive (ENA)
+		part of Public analysis pangolin lineages Tool        |
         |                                                              |
-        |             Tool to to fetch data from NCBI or ENA           |
+        |             Tool to to fetch consensus data from ENA           |
         + =========================================================== +  """)
 parser.add_argument('-o', '--output', help='Fasta files output directory', type=str, required=True)
 args = parser.parse_args()

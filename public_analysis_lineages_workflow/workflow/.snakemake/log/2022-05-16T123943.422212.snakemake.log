@@ -1,3 +1,0 @@
-SyntaxError in line 4 of /hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/rules/run_pangolin.smk:
-EOF in multi-line statement (run_pangolin.smk, line 4)
-  File "/hps/software/users/cochrane/ena/azyoud/lineages/lineages_workflow/workflow/Snakefile", line 9, in <module>
