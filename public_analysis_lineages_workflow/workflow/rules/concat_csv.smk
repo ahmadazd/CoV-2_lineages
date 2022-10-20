@@ -9,4 +9,4 @@ rule concat_csv:
                 tmpdir=config["temp_dir"]
 
 	shell:
-		"python {config[workflow_dir]}/scripts/public_concatenate_pangolin.py -f {config[output_dir]}/pango -o {config[final_output_dir]}"
+		"python {config[workflow_dir]}/workflow/scripts/public_concatenate_pangolin.py -f {config[output_dir]}/pango -o {config[final_output_dir]}"

@@ -7,9 +7,9 @@ rule concat_csv:
                 mem_mb = 3048,
                 tmpdir=config["temp_dir"]
 	params:
-                host=''
-                portal=
-                serviceName=''
+                host=config["host"]
+                portal=config["portal"]
+                serviceName=config["serviceName"]
 
 	shell:
-		"python {config[script_dir]}/scripts/concatenate_pangolin.py -h {params.host} -p {params.portal} -s {params.serviceName} -f {config[output_dir]}/pango -o {output}"
+		"python {config[workflow_dir]}/workflow/scripts/concatenate_pangolin.py -h {params.host} -p {params.portal} -s {params.serviceName} -f {config[output_dir]}/pango -o {output}"

@@ -9,4 +9,4 @@ rule create_multifasta_public:
                 mem_mb = 2048,
                 tmpdir=config["temp_dir"]
 	shell:
-		"python {config[workflow_dir]}/scripts/create_multifasta_public.py -f {config[output_dir]}/public_consensus -num {params.num} -o {config[output_dir]}/public_multifasta"
+		"python {config[workflow_dir]}/workflow/scripts/create_multifasta_public.py -f {config[output_dir]}/public_consensus -num {params.num} -o {config[output_dir]}/public_multifasta"

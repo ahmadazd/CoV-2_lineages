@@ -9,4 +9,4 @@ rule fetch_private_fasta:
                 tmpdir=config["temp_dir"]
 
 	shell:
-		 "python3 {config[script_dir]}/scripts/private_fasta_fetching.py -o {config[output_dir]}/private_consensus"
+		 "python3 {config[workflow_dir]}/workflow/scripts/private_fasta_fetching.py -o {config[output_dir]}/private_consensus"

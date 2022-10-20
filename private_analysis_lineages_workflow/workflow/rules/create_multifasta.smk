@@ -8,4 +8,4 @@ rule create_multifasta:
 	params:
 		num = str(config["chunks"])
 	shell:
-		"python {config[script_dir]}/scripts/create_multifasta.py -f {config[output_dir]}/private_consensus -num {params.num} -o {config[output_dir]}/private_multifasta"
+		"python {config[workflow_dir]}/workflow/scripts/create_multifasta.py -f {config[output_dir]}/private_consensus -num {params.num} -o {config[output_dir]}/private_multifasta"

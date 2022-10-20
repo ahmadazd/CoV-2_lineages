@@ -4,7 +4,7 @@ rule create_update_list:
         output:
                 expand("{output_dir}/embl-covid19.accs_updated.txt", output_dir=config["output_dir"])
         params:
-                days = 90
+                days = config["days"]
         resources:
                 mem_mb = 3048,
 		tmpdir=config["temp_dir"]
