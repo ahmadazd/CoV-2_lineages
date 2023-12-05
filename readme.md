@@ -14,6 +14,9 @@ The workflows includes:
  - Installation of snakemake, please follow the guideline below:      
    [https://snakemake.readthedocs.io/en/stable/getting_started/installation.html]
    (https://snakemake.readthedocs.io/en/stable/getting_started/installation.html)
+  - Installation of snakemake LSF profile, please follow the Installation guideline below:      
+   [https://github.com/Snakemake-Profiles/lsf#install]
+   (https://github.com/Snakemake-Profiles/lsf#install)
  - Install pangolin software to your conda environment (please follow the link below)   
    [https://cov-lineages.org/resources/pangolin/installation.html](https://cov-lineages.org/resources/pangolin/installation.html)
  - Clone the repository  
@@ -69,8 +72,12 @@ Conda activate <env name>
 
  - ***days:*** ```<integer number>``` -> collect sequences with submission date in the period of the number of days specify past the current date.
 
- - Modify the configFile path in the *Snakefile* to direct to your current *config.yaml* file
-   ``` configfile: "<path/to/ config.yaml>" ```
+**For public analysis configFile:**
+  - ***project_ids:*** ```<PRJEB#####,PRJEB####,PRJEB####>``` -> The project ids that contains the analysis of interest (The analysis to be fetched) separated by comma without spaces 
+
+
+***Modify the configFile path in the *Snakefile* to direct to your current *config.yaml* file
+   ``` configfile: "<path/to/config.yaml>" ```
 
 ### Run the Workflow
 ***To run the workflow just run the following command:***
